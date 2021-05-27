@@ -14,7 +14,7 @@ function rewrite(expr,args,callflag=false)
         expr
     elseif expr.head == :call && expr.args[1] == args[1]
         if callflag
-            warn("Not tail recursive call is found.")
+            @warn("Not tail recursive.")
             expr
         else
             newargs=Expr(:tuple)
